@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "../css/Moviecard.css"
 const Moviecard = ({movie}) => {
     const onfavoriteClick= ()=>{
         alert("clicked")

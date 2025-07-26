@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Moviecard from '../components/Moviecard'
+import "../css/Home.css"
 
 const Home = () => {
   const [searchQuery, setSearchQuery]=useState('')
@@ -17,7 +18,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      <form onSubmit={handleSearch}>
+      <form onSubmit={handleSearch} className='search-form'>
         <input type="text" 
         placeholder='search for movie...' 
         className='search-input' 
@@ -27,7 +28,7 @@ const Home = () => {
         <button type='submit' className='search-button'>Search</button>
 
       </form>
-      <div className="movie-grid">
+      <div className="movies-grid">
         {movies.map((movie) =>
           movie.title.toLowerCase().startsWith(searchQuery)&&(<Moviecard movie={movie} key={movie.id} />)
         )}
